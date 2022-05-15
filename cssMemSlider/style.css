@@ -7,7 +7,6 @@ body {
 }
 .slider {
     display: flex;
-    flex-direction: column;
     width: 37.5rem;
     height: 26.25rem;
     overflow: hidden;
@@ -17,8 +16,6 @@ body {
 }
 .slides {
     display: inline-flex;
-    width: 100%;
-    height: 100%;
     transition: all .6s ease;
 }
 /* .middle {
@@ -46,18 +43,16 @@ body {
 }
 .navigation {
     display: flex;
-    /* justify-content: center; */
     justify-content: flex-end;
     align-items: center;
     margin-top: -2vh;
 }
-
 .bar {
     height: 0.5rem;
     width: 1.875rem;
     margin: 0.4rem;
     cursor: pointer;
-    background-color: aqua;
+    background-color:#ffee00;
     opacity: .5;
     border-radius: 1rem;
     transition: all .3s ease;
@@ -66,3 +61,35 @@ body {
 input[name="sld"] {
     display: none;
 } 
+
+.area-for-text {
+    width: 37.5rem;
+    height: 8.25rem;
+    overflow: hidden;
+    border: .35rem solid black;
+    margin: 2rem auto;
+    background: #6bdef6;
+}
+
+.text {
+    display: inline-flex;
+    align-items: center;
+    transition: all .6s ease; 
+}
+.text > p {
+    width: 37.5rem;
+    margin-top: 3vh;
+}
+
+#w1:checked ~ .text > p {
+    margin-left: 0;
+}
+#w2:checked ~ .text > p {
+    margin-left: -100%;
+}
+#w3:checked ~ .text > p {
+    margin-left: -200%;
+}
+#w4:checked ~ .text > p {
+    margin-left: -300%;
+}
