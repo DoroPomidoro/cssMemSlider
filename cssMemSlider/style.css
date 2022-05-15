@@ -4,13 +4,23 @@
 }
 body {
     background-color: bisque;
+    font-family: 'Oswald', sans-serif;
 }
+.container {
+    margin: 0 1rem;
+}
+h1 {
+    padding: 3rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
 .slider {
-    display: flex;
-    width: 37.5rem;
-    height: 26.25rem;
+    /* display: flex; */
+    max-width: 37.5rem;
+    /* height: 26.25rem; */
     overflow: hidden;
-    border: .35rem solid black;
+    /* border: .35rem solid black; */
     margin:0 auto;
     /* margin: 10vh 20vw 3vh 20vw; */
 }
@@ -18,15 +28,8 @@ body {
     display: inline-flex;
     transition: all .6s ease;
 }
-/* .middle {
-    position: relative;
-    transform: translateX(50%, 50%);
-} */
-/* .slide.first {
-    margin-left: 0vw;
-} */
 .slide {
-    width: 100%;
+    max-width: 100%;
 }
 
 #w1:checked ~ .slides {
@@ -46,50 +49,84 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin-top: -2vh;
+    padding-bottom: 3rem;
+    background-color: #f7fcf6;
+}
+.label-block {
+    display: flex;
+    cursor: pointer;
+    padding: 0.6rem;
+    margin-top: -0.7vh;
 }
 .bar {
     height: 0.5rem;
     width: 1.875rem;
-    margin: 0.4rem;
-    cursor: pointer;
     background-color:#ffee00;
     opacity: .5;
     border-radius: 1rem;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 input[name="sld"] {
     display: none;
 } 
-
 .area-for-text {
-    width: 37.5rem;
-    height: 8.25rem;
+    max-width: 37.5rem;
     overflow: hidden;
     border: .35rem solid black;
-    margin: 2rem auto;
-    background: #6bdef6;
+    margin: 0 auto;
+    background: #ffffff;
 }
 
 .text {
     display: inline-flex;
     align-items: center;
     transition: all .6s ease; 
+    background-color: #f7fcf6;
 }
 .text > p {
-    width: 37.5rem;
+    width: 37.3rem;
     margin-top: 3vh;
+    padding-left: 0.2rem;
+    font-size: 1.3rem;
 }
 
-#w1:checked ~ .text > p {
+#w1:checked ~ .text {
     margin-left: 0;
 }
-#w2:checked ~ .text > p {
+#w2:checked ~ .text {
     margin-left: -100%;
 }
-#w3:checked ~ .text > p {
+#w3:checked ~ .text {
     margin-left: -200%;
 }
-#w4:checked ~ .text > p {
+#w4:checked ~ .text {
     margin-left: -300%;
+}
+
+#w1:checked ~ .navigation>[for=w1],
+#w2:checked ~ .navigation>[for=w2],
+#w3:checked ~ .navigation>[for=w3],
+#w4:checked ~ .navigation>[for=w4] {
+    background: red;
+}
+
+@media (max-width: 40rem) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    .label-block {
+        padding: 0.4rem;
+    }
+    .text > p {
+        font-size: initial;
+    }
+    .bar {
+        width: 1.4rem;
+    }
+    .navigation {
+        justify-content: center;
+        margin-top: -4vh;
+    }
 }
