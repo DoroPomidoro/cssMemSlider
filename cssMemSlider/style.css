@@ -52,6 +52,7 @@ h1 {
     background-color: #f7fcf6;
 }
 .bar {
+    display: flex;
     height: 0.7rem;
     width: 2rem;
     background-color:#3d4149;
@@ -59,11 +60,8 @@ h1 {
     border-radius: 1rem;
     transition: all .3s ease;
     cursor: pointer;
-    /* margin: 0 0.5rem; */
 }
-/* .bar:hover {
-    opacity: .9;
-} */
+
 
 input[name="sld"] {
     display: none;
@@ -135,7 +133,6 @@ label:hover .bar {
     .navigation {
         justify-content: center;
         margin-top: -4.5rem;
-        /* margin-bottom: 2rem; */
     }
     .text {
         padding-bottom: 1rem;
