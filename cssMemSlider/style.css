@@ -91,6 +91,7 @@ input[name="sld"] {
 label {
     padding: 0.75rem;
     cursor: pointer;
+    z-index: 5;
 }
 label:hover .bar {
     opacity: .9;
