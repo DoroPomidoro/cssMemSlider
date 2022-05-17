@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #484848;
+    font-family: 'Oswald', sans-serif;
+}
+.container {
+    margin: 0 1rem;
+}
+h1 {
+    padding: 2rem;
+    font-size: 3rem;
+    text-align: center;
+    color: wheat;
+}
+
+.slider {
+    max-width: 37.5rem;
+    overflow: hidden;
+    margin:0 auto;
+    background-color: #f7fcf6;
+}
+.slides {
+    display: inline-flex;
+    transition: all .6s ease;
+    width: inherit;
+}
+.slide {
+    width: 100%;
+}
+
+#w1:checked ~ .slides {
+    transform:translateX(0%);
+}
+#w2:checked ~ .slides {
+    transform:translateX(-100%);
+}
+#w3:checked ~ .slides {
+    transform:translateX(-200%);
+}
+#w4:checked ~ .slides {
+    transform:translateX(-300%);
+}
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -1.875rem;
+    padding-bottom: 3rem;
+    background-color: #f7fcf6;
+}
+.bar {
+    display: flex;
+    height: 0.7rem;
+    width: 2rem;
+    background-color:#3d4149;
+    opacity: .4;
+    border-radius: 1rem;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+
+input[name="sld"] {
+    display: none;
+} 
+.area-for-text {
+    max-width: 37.5rem;
+    overflow: hidden;
+    border: 0.35rem solid #a4242e;
+    border-radius: 1rem;
+    margin: 1rem auto;
+    background: #ffffff;
+}
+
+.text {
+    display: inline-flex;
+    align-items: center;
+    transition: all .6s ease; 
+    background-color: #f7fcf6;
+    width: 100%;
+}
+.text > p {
+    min-width: 100%;
+    margin-top: 5vh;
+    padding-left: 0.1rem;
+    font-size: 1.3rem;
+}
+label {
+    padding: 0.75rem;
+    cursor: pointer;
+    z-index: 5;
+}
+label:active .bar {
+    transform: scale(0.8);
+    width: 1.8rem;
+    background-color:greenyellow;
+    border-radius: 2rem;
+    transition: all .1s ease;
+
+}
+label:hover .bar {
+    opacity: .9;
+}
+
+#w1:checked ~ .text {
+    transform:translateX(0%);
+}
+#w2:checked ~ .text {
+    transform:translateX(-100%);
+}
+#w3:checked ~ .text {
+    transform:translateX(-200%);
+}
+#w4:checked ~ .text {
+    transform:translateX(-300%);
+}
+
+#w1:checked ~ .navigation>[for=w1]>.bar,
+#w2:checked ~ .navigation>[for=w2]>.bar,
+#w3:checked ~ .navigation>[for=w3]>.bar,
+#w4:checked ~ .navigation>[for=w4]>.bar {
+    background: #a4242e;
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 40rem) {
+    h1 {
+        font-size: 1.75rem;
+        padding: 1rem;
+    }
+    .text > p {
+        font-size: initial;
+        max-width: 37.3rem;
+    }
+    .bar {
+        width: 1.4rem;
+        height: 0.5rem;
+    }
+    .navigation {
+        justify-content: center;
+        margin-top: -4.5rem;
+    }
+    .text {
+        padding-bottom: 1rem;
+    }
+}
